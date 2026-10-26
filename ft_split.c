@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_count_character(char const *s, char c)
+static int	ft_calcul_count_of_character(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -27,7 +27,7 @@ static int	ft_count_character(char const *s, char c)
 	return (count);
 }
 
-static int	ft_count_words(char const *s, char c)
+static int	ft_calcul_first_character_in_the_words(char const *s, char c)
 {
 	int	count;
 	int	i;
@@ -43,7 +43,7 @@ static int	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_all(char const *s, int len_s)
+static char	*ft_fill_the_arrays(char const *s, int len_s)
 {
 	char	*string;
 	int		i;
@@ -63,7 +63,7 @@ static char	*ft_all(char const *s, int len_s)
 	return (string);
 }
 
-static char	**ft_send(int count_words, char c, char const *s, char **array)
+static char	**ft_chaeck_all_done_and_free(int count_words, char c, char const *s, char **array)
 {
 	int	len_s;
 	int	pos;
@@ -77,8 +77,8 @@ static char	**ft_send(int count_words, char c, char const *s, char **array)
 		pos += len_s;
 		while (s[pos] == c)
 			pos++;
-		len_s = ft_count_character(s + pos, c);
-		array[i] = ft_all(s + pos, len_s);
+		len_s = ft_calcul_count_of_character(s + pos, c);
+		array[i] = ft_fill_the_arrays(s + pos, len_s);
 		if (array[i] == NULL)
 		{
 			while (i > 0)
@@ -99,11 +99,11 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	count_words = ft_count_words(s, c);
+	count_words = ft_calcul_first_character_in_the_words(s, c);
 	array = malloc((count_words + 1) * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
-	return (ft_send(count_words, c, s, array));
+	return (ft_chaeck_all_done_and_free(count_words, c, s, array));
 }
 /*
 #include <stdio.h>

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_doo(char *arr, char *str, unsigned int start, size_t len)
+static char	*ft_cpy_countent_str_to_new_array(char *arr, char *str, unsigned int start, size_t len)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ static char	*ft_doo(char *arr, char *str, unsigned int start, size_t len)
 	return (arr);
 }
 
-static char	*ft_chack_valid(void)
+static char	*ft_allocated_one_biyt_for_null(void)
 {
 	char	*rr;
 
@@ -37,7 +37,7 @@ static char	*ft_chack_valid(void)
 	return (rr);
 }
 
-static size_t	ft_count(size_t ln_s2, unsigned int strt, size_t ln2)
+static size_t	ft_count_size_shold_be_allocate(size_t ln_s2, unsigned int strt, size_t ln2)
 {
 	size_t	cnt;
 	size_t	size;
@@ -58,14 +58,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	len_s = ft_strlen(s);
 	if (start > len_s)
-		return (ft_chack_valid());
+		return (ft_allocated_one_biyt_for_null());
 	else if ((start == len_s) || (len == 0))
-		return (ft_chack_valid());
-	size = ft_count(len_s, start, len);
+		return (ft_allocated_one_biyt_for_null());
+	size = ft_count_size_shold_be_allocate(len_s, start, len);
 	arr = malloc(size + 1);
 	if (arr == NULL)
 		return (NULL);
-	ft_doo(arr, (char *)s, start, size);
+	ft_cpy_countent_str_to_new_array(arr, (char *)s, start, size);
 	arr[size] = '\0';
 	return (arr);
 }

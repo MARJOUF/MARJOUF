@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_calcul_argument(int n)
+static int	ft_calcul_integers(int n)
 {
 	int	count;
 
@@ -37,7 +37,7 @@ static int	ft_calcul_argument(int n)
 	return (count);
 }
 
-static char	*ft_argument(int n, int count_argument, char *argument)
+static char	*ft_fill_the_array(int n, int count_argument, char *argument)
 {
 	while (n > 0)
 	{
@@ -53,7 +53,7 @@ char	*ft_itoa(int n)
 	char	*argument;
 	int		count_argument;
 
-	count_argument = ft_calcul_argument(n);
+	count_argument = ft_calcul_integers(n);
 	argument = malloc(count_argument + 1);
 	if (argument == NULL)
 		return (NULL);
@@ -70,7 +70,7 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		argument[0] = '0';
 	argument[count_argument--] = '\0';
-	return (ft_argument(n, count_argument, argument));
+	return (ft_fill_the_array(n, count_argument, argument));
 }
 /*
 #include <stdio.h>
