@@ -6,7 +6,7 @@
 /*   By: akmarjou <akmarjou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 19:51:26 by akmarjou          #+#    #+#             */
-/*   Updated: 2026/10/19 13:42:47 by akmarjou         ###   ########.fr       */
+/*   Updated: 2026/10/27 14:06:38 by akmarjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <limits.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <string.h>
 
 typedef struct s_list
 {

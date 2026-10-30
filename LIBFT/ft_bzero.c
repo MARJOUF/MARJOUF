@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akmarjou <akmarjou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/19 10:18:10 by akmarjou          #+#    #+#             */
-/*   Updated: 2026/10/19 10:18:11 by akmarjou         ###   ########.fr       */
+/*   Created: 2026/10/12 16:52:29 by akmarjou          #+#    #+#             */
+/*   Updated: 2026/10/27 13:55:50 by akmarjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_bzero(void *s, size_t n)
 {
-	if (lst == NULL || del == NULL)
-		return ;
-	if (del)
-		del(lst->content);
-	free(lst);
-}
-/*
-#include <stdio.h>
+	size_t	i;
+	char	*str2;
 
-int	main(void)
-{
-	t_list *n = ft_lstnew(ft_strdup("salam"));
-	ft_lstdelone(n, ft_chihaja);
-}*/
+	i = 0;
+	str2 = (char *)s;
+	while (i < n)
+	{
+		str2[i] = 0;
+		i++;
+	}
+}

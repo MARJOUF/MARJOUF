@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-static char	*ft_cpy_countent_str_to_new_array(char *arr, char *str, unsigned int start, size_t len)
+static char	*ft_cpy_countent_str_to_new_array(char *arr, char *str,
+		unsigned int start, size_t len)
 {
 	size_t	i;
 
@@ -37,7 +38,8 @@ static char	*ft_allocated_one_biyt_for_null(void)
 	return (rr);
 }
 
-static size_t	ft_count_size_shold_be_allocate(size_t ln_s2, unsigned int strt, size_t ln2)
+static size_t	ft_count_size_shold_be_allocate(size_t ln_s2, unsigned int strt,
+		size_t ln2)
 {
 	size_t	cnt;
 	size_t	size;
@@ -56,6 +58,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	size;
 	char	*arr;
 
+	if (!s)
+		return (NULL);
 	len_s = ft_strlen(s);
 	if (start > len_s)
 		return (ft_allocated_one_biyt_for_null());

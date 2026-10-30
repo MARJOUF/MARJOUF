@@ -6,7 +6,7 @@
 /*   By: akmarjou <akmarjou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/16 13:55:24 by akmarjou          #+#    #+#             */
-/*   Updated: 2026/10/16 15:24:17 by akmarjou         ###   ########.fr       */
+/*   Updated: 2026/10/30 15:43:58 by akmarjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ static char	*ft_fill_the_arrays(char const *s, int len_s)
 	return (string);
 }
 
-static char	**ft_chaeck_all_done_and_free(int count_words, char c, char const *s, char **array)
+static char	**ft_chaeck_all_done_and_free(int count_words, char c,
+		char const *s, char **array)
 {
 	int	len_s;
 	int	pos;
@@ -105,26 +106,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (ft_chaeck_all_done_and_free(count_words, c, s, array));
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*s;
-	char	c;
-	char	**arr;
-	int		i;
-
-	s = "  hello   world  ";
-	c = ' ';
-	arr = ft_split(s, c);
-	i = 0;
-	while (arr[i])
-{
-    printf("%s\n", arr[i]);
-    free(arr[i]);
-    i++;
-}
-free(arr);
-	return (0);
-}*/

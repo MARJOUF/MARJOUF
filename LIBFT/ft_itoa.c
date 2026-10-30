@@ -6,7 +6,7 @@
 /*   By: akmarjou <akmarjou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/17 08:37:36 by akmarjou          #+#    #+#             */
-/*   Updated: 2026/10/17 08:37:39 by akmarjou         ###   ########.fr       */
+/*   Updated: 2026/10/30 15:42:44 by akmarjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,48 +72,3 @@ char	*ft_itoa(int n)
 	argument[count_argument--] = '\0';
 	return (ft_fill_the_array(n, count_argument, argument));
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	*s;
-
-	s = ft_itoa(0);
-	printf("0           -> %s\n", s);
-	free(s);
-
-	s = ft_itoa(7);
-	printf("7           -> %s\n", s);
-	free(s);
-
-	s = ft_itoa(-7);
-	printf("-7          -> %s\n", s);
-	free(s);
-
-	s = ft_itoa(10);
-	printf("10          -> %s\n", s);
-	free(s);
-
-	s = ft_itoa(123);
-	printf("123         -> %s\n", s);
-	free(s);
-
-	s = ft_itoa(-123);
-	printf("-123        -> %s\n", s);
-	free(s);
-
-	s = ft_itoa(1000);
-	printf("1000        -> %s\n", s);
-	free(s);
-
-	s = ft_itoa(INT_MAX);
-	printf("INT_MAX     -> %s\n", s);
-	free(s);
-
-	s = ft_itoa(INT_MIN);
-	printf("INT_MIN     -> %s\n", s);
-	free(s);
-
-	return (0);
-}*/

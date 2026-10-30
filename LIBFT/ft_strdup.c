@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akmarjou <akmarjou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/17 09:31:18 by akmarjou          #+#    #+#             */
-/*   Updated: 2026/10/17 09:31:20 by akmarjou         ###   ########.fr       */
+/*   Created: 2026/10/14 15:19:13 by akmarjou          #+#    #+#             */
+/*   Updated: 2026/10/27 13:57:48 by akmarjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+static char	*ft_cpy(char *dest, char *src)
 {
-	char	*array;
-	size_t	size;
 	size_t	i;
 
 	i = 0;
-	if (!s || !f)
-		return (NULL);
-	size = ft_strlen(s);
-	array = malloc(size + 1);
-	if (array == NULL)
-		return (NULL);
-	while (i < size)
+	while (src[i])
 	{
-		array[i] = f(i, s[i]);
+		dest[i] = src[i];
 		i++;
 	}
-	array[i] = '\0';
-	return (array);
+	dest[i] = '\0';
+	return (dest);
 }
-/*
-#include <stdio.h>
 
-int	main(void)
+char	*ft_strdup(const char *s)
 {
-	char *arr;
+	char	*arr;
+	size_t	len_s;
 
-	arr = ft_strmapi("abc", to_upper);
-	printf("%s\n", arr);
-}*/
+	len_s = ft_strlen(s);
+	arr = malloc((len_s + 1));
+	if (arr == NULL)
+		return (NULL);
+	ft_cpy(arr, (char *)s);
+	return (arr);
+}

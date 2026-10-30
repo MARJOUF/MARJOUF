@@ -30,7 +30,7 @@ To use it in a program:
 ```
 
 ```bash
-cc -Wall -Wextra -Werror main.c -L. -lft
+cc main.c -L. -lft -o my_program
 ```
 
 ## Resources

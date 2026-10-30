@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akmarjou <akmarjou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/12 18:33:10 by akmarjou          #+#    #+#             */
-/*   Updated: 2026/10/13 12:42:44 by akmarjou         ###   ########.fr       */
+/*   Created: 2026/10/17 11:34:38 by akmarjou          #+#    #+#             */
+/*   Updated: 2026/10/17 12:28:37 by akmarjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t					i;
-	char			*dest2;
-	const char		*src2;
+	unsigned int	i;
 
-	dest2 = (char *) dest;
-	src2 = (const char *) src;
-	if (dest2 < src2)
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		i = 0;
-		while (i < n)
-		{
-			dest2[i] = src2[i];
-			i++;
-		}
+		f(i, &s[i]);
+		i++;
 	}
-	else
-	{
-		while (n > 0)
-		{
-			n--;
-			dest2[n] = src2[n];
-		}
-	}
-	return (dest);
 }
