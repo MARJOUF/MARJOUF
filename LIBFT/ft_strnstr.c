@@ -6,7 +6,7 @@
 /*   By: akmarjou <akmarjou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/13 23:27:56 by akmarjou          #+#    #+#             */
-/*   Updated: 2026/10/27 13:58:37 by akmarjou         ###   ########.fr       */
+/*   Updated: 2026/11/01 14:22:33 by akmarjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	count = 0;
 	if (little[i] == '\0')
 		return ((char *)big);
-	while (big[i] && i < len)
+	while (i < len && big[i])
 	{
 		count = 0;
 		a = 0;

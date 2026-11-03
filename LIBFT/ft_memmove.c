@@ -6,7 +6,7 @@
 /*   By: akmarjou <akmarjou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/12 18:33:10 by akmarjou          #+#    #+#             */
-/*   Updated: 2026/10/30 15:56:03 by akmarjou         ###   ########.fr       */
+/*   Updated: 2026/10/31 16:09:49 by akmarjou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			i++;
 		}
 	}
-	else if (dest > src2)
+	else if (dest2 > src2)
 	{
 		while (n > 0)
 		{
